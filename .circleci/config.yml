@@ -8,6 +8,9 @@ jobs:
     docker:
       - image: cimg/android:2023.12  # This defines the Docker image for the build
 
+    environment:
+      JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
+
     steps:
       - checkout
 
