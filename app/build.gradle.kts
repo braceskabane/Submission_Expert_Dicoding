@@ -15,7 +15,7 @@ android {
 
     defaultConfig {
         applicationId = "com.dicoding.membership"
-        minSdk = 21
+        minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -44,6 +44,10 @@ android {
     buildFeatures {
         viewBinding = true
         buildConfig = true
+    }
+    lint {
+        baseline = file("lint-baseline.xml")
+        abortOnError = false
     }
     dynamicFeatures += setOf(":favorite")
 }

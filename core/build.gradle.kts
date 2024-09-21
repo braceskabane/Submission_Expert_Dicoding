@@ -15,7 +15,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        minSdk = 21
+        minSdk = 24
 
         buildConfigField("String", "BASE_URL", "\"https://story-api.dicoding.dev/v1/\"")
 
