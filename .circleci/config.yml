@@ -10,10 +10,18 @@ jobs:
       - checkout
       
       - run:
-          name: Install Java 17
+          name: Add Google Cloud SDK GPG Key
           command: |
-            sudo apt-get update
-            sudo apt-get install -y openjdk-17-jdk
+            echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+            curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
+            
+      - run:
+          name: Update APT Package Index
+          command: sudo apt-get update
+
+      - run:
+          name: Install Java 17
+          command: sudo apt-get install -y openjdk-17-jdk
 
       - run:
           name: Set JAVA_HOME
