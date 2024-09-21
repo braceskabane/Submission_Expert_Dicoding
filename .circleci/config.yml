@@ -6,13 +6,24 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/android:2023.12  # This defines the Docker image for the build
-
-    environment:
-      JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
+      - image: cimg/android:2023.12  # Ensure this image supports Java 17
 
     steps:
       - checkout
+
+      - run:
+          name: Install JetBrains Runtime 17.0.11
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y openjdk-17-jdk  # This installs the JDK
+
+      - run:
+          name: Set JAVA_HOME
+          command: echo 'export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64' >> $BASH_ENV
+
+      - run:
+          name: Set GRADLE_LOCAL_JAVA_HOME
+          command: echo 'export GRADLE_LOCAL_JAVA_HOME=$JAVA_HOME' >> $BASH_ENV
 
       - restore_cache:
           key: android-orb-v1-{{ checksum "build.gradle" }}
