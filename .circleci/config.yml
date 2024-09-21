@@ -26,7 +26,7 @@ jobs:
           command: echo 'export GRADLE_LOCAL_JAVA_HOME=$JAVA_HOME' >> $BASH_ENV
 
       - restore_cache:
-          key: android-orb-v1-{{ checksum "build.gradle" }}
+          key: android-orb-v1-{{ checksum "app/build.gradle" }}
 
       - run:
           name: Chmod permissions
