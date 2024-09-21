@@ -16,7 +16,6 @@ android {
     defaultConfig {
         applicationId = "com.dicoding.membership"
         minSdk = 24
-        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
