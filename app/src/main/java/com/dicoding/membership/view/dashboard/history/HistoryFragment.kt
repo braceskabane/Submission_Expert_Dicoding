@@ -71,6 +71,7 @@ class HistoryFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.viewPager.adapter = null
         _binding = null
     }
 }

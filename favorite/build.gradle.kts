@@ -95,4 +95,7 @@ dependencies {
 
     // Additional Hilt Compiler for ViewModels
     ksp(libs.androidx.hilt.compiler)
+
+    // LeakCanary
+    implementation(libs.leakcanary)
 }

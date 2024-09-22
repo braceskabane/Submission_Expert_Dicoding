@@ -43,7 +43,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         DaggerHomeComponent.builder()
-            .context(requireContext())
+            .context(requireContext().applicationContext) // Use applicationContext instead
             .appDependencies(
                 EntryPointAccessors.fromApplication(
                     requireContext().applicationContext,
@@ -85,6 +85,9 @@ class HomeFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+
+        // Detach the adapter from RecyclerView to avoid leaks
+        binding.rvPromo.adapter = null
         _binding = null
     }
 }

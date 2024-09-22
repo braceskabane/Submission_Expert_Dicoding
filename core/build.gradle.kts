@@ -84,4 +84,7 @@ dependencies {
     // Glide
     implementation(libs.glide)
     ksp(libs.glide.compiler)
+
+    // LeakCanary
+    implementation(libs.leakcanary)
 }

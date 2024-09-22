@@ -79,5 +79,7 @@
     <string name="title_dynamicfeature">core</string>
     <string name="title_core">Module Title</string>
     <string name="title_favorite">favorite</string>
+    <string name="power_connected">Power connected!</string>
+    <string name="power_disconnected">Power disconnected!</string>
 
 </resources>

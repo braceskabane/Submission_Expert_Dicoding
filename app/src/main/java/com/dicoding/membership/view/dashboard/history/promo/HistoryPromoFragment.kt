@@ -70,6 +70,8 @@ class HistoryPromoFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        storyPagingAdapter.setOnItemClickCallback(null)
+        binding.rvPromo.adapter = null
         _binding = null
     }
 }

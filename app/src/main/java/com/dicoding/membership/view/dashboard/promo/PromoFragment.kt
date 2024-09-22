@@ -28,7 +28,7 @@ class PromoFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentPromoBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -38,7 +38,7 @@ class PromoFragment : Fragment() {
 
         setupRecyclerView()
 
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             promoViewModel.getStories("default_filter", false).collectLatest { pagingData ->
                 storyPagingAdapter.submitData(pagingData)
             }
@@ -62,6 +62,8 @@ class PromoFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        storyPagingAdapter.setOnItemClickCallback(null)
+        binding.recyclerView.adapter = null
         _binding = null
     }
 }
