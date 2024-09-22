@@ -96,6 +96,7 @@ dependencies {
     implementation(libs.leakcanary)
 
     // Encryption
-    implementation (libs.security.crypto)
-    implementation (libs.secure.preferences.lib)
+    implementation(libs.security.crypto)
+    implementation(libs.secure.preferences.lib)
+    implementation(libs.sqlcipher)
 }

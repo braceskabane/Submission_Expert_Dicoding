@@ -19,7 +19,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/icons_success"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginBottom="16dp"

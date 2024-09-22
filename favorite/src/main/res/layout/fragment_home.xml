@@ -12,8 +12,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <TextView
             style="@style/textStyleSemIBold_20"
@@ -34,7 +34,6 @@
 
             <TextView
                 style="@style/textStyleSemIBold_32"
-                android:id="@+id/tvMembershipType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ace Silver"
@@ -42,7 +41,6 @@
 
             <TextView
                 style="@style/textStyleMedium_14"
-                android:id="@+id/tvMembershipExpiry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Exp 28 Desember 2023"
@@ -65,7 +63,6 @@
 
                     <TextView
                         style="@style/textStyleMedium_14"
-                        android:id="@+id/tvCouponLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sisa Kupon"
@@ -77,7 +74,8 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_gravity="center"
-                        android:padding="4dp">
+                        android:padding="4dp"
+                        tools:ignore="UseCompoundDrawables">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -88,7 +86,6 @@
 
                         <TextView
                             style="@style/textStyleSemIBold_16"
-                            android:id="@+id/tvCouponCount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="16"
@@ -115,7 +112,6 @@
 
                     <TextView
                         style="@style/textStyleMedium_14"
-                        android:id="@+id/tvPointsLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Jumlah Poin"
@@ -127,7 +123,8 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_gravity="center"
-                        android:padding="4dp">
+                        android:padding="4dp"
+                        tools:ignore="UseCompoundDrawables">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -137,7 +134,6 @@
                             android:layout_gravity="center"/>
                         <TextView
                             style="@style/textStyleSemIBold_16"
-                            android:id="@+id/tvPointsCount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="20.000"
@@ -154,12 +150,12 @@
             android:orientation="horizontal"
             android:layout_below="@id/tvGreeting"
             android:layout_marginTop="16dp"
-            android:gravity="center">
+            android:gravity="center"
+            tools:ignore="ObsoleteLayoutParam">
 
             <Button
                 style="@style/textStyleButton3"
                 android:background="@drawable/custom_button"
-                android:id="@+id/btnTransfer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -172,7 +168,6 @@
             <Button
                 style="@style/textStyleButton3"
                 android:background="@drawable/custom_button"
-                android:id="@+id/btnReferral"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -185,7 +180,6 @@
 
         <TextView
             style="@style/textStyleSemIBold_20"
-            android:id="@+id/tvPromoHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Anda Sukai"

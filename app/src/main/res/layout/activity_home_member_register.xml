@@ -29,7 +29,6 @@
 
             <!-- Photo Section -->
             <TextView
-                android:id="@+id/tv_photo_label"
                 style="@style/textStyleMedium_14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -37,7 +36,6 @@
                 android:text="Foto KTP/SIM" />
 
             <ImageView
-                android:id="@+id/img_ktp_sim"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="8dp"
@@ -70,7 +68,6 @@
                 app:hintEnabled="false">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ed_register_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/custom_edit_text"
@@ -85,7 +82,6 @@
 
             <!-- NIK -->
             <TextView
-                android:id="@+id/tv_nik"
                 style="@style/textStyleMedium_14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -93,7 +89,6 @@
                 android:text="NIK" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/layout_register_nik"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -108,7 +103,6 @@
                 app:hintEnabled="false">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ed_register_nik"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/custom_edit_text"
@@ -123,7 +117,6 @@
 
             <!-- Phone Number -->
             <TextView
-                android:id="@+id/tv_phone"
                 style="@style/textStyleMedium_14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -131,7 +124,6 @@
                 android:text="No Telepon" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/layout_register_phone"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -146,7 +138,6 @@
                 app:hintEnabled="false">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ed_register_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/custom_edit_text"
@@ -161,7 +152,6 @@
 
             <!-- Address -->
             <TextView
-                android:id="@+id/tv_address"
                 style="@style/textStyleMedium_14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -169,7 +159,6 @@
                 android:text="Alamat" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/layout_register_address"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -184,7 +173,6 @@
                 app:hintEnabled="false">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ed_register_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/custom_edit_text"

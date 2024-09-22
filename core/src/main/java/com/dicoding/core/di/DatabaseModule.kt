@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyProperties
-import android.util.Log
 import androidx.datastore.core.DataStore
 import androidx.datastore.core.handlers.ReplaceFileCorruptionHandler
 import androidx.datastore.preferences.SharedPreferencesMigration
@@ -18,7 +17,6 @@ import androidx.security.crypto.MasterKey
 import com.dicoding.core.data.source.local.datastore.DatastoreManager
 import com.dicoding.core.data.source.local.room.StoryDao
 import com.dicoding.membership.core.data.source.local.room.StoryDatabase
-import com.securepreferences.SecurePreferences
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,6 +25,8 @@ import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import javax.inject.Singleton
 
 @Module
@@ -76,11 +76,17 @@ class DatabaseModule {
     @Singleton
     @Provides
     fun provideDatabase(@ApplicationContext context: Context): StoryDatabase {
+        val passphrase: ByteArray = SQLiteDatabase.getBytes("your_secure_password".toCharArray())  // Ubah password sesuai kebutuhan
+        val factory = SupportFactory(passphrase)
+
         return Room.databaseBuilder(
             context,
             StoryDatabase::class.java,
             "StoryDatabase.db"
-        ).fallbackToDestructiveMigration().build()
+        )
+            .openHelperFactory(factory)
+            .fallbackToDestructiveMigration()
+            .build()
     }
 
     @Provides

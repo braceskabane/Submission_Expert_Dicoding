@@ -6,7 +6,6 @@
     tools:context=".view.dashboard.history.poin.HistoryTransferPointFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewHistoryTransferPoint"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical" />

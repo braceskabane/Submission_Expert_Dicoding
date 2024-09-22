@@ -58,7 +58,6 @@
             android:clipToPadding="false">
 
             <TextView
-                android:id="@+id/tv_package_title_1"
                 style="@style/textStyleSemIBold_20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -69,7 +68,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="8dp">
+                android:layout_marginBottom="8dp"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:layout_width="16dp"
@@ -78,7 +78,6 @@
 
                 <TextView
                     style="@style/textStyleMedium_14"
-                    android:id="@+id/tvPromoDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Berlaku 3 Bulan"
@@ -103,7 +102,6 @@
                         android:layout_marginEnd="8dp"
                         android:layout_gravity="center"/>
                     <TextView
-                        android:id="@+id/tv_package_description_1_1"
                         style="@style/textStyleMedium_14"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -119,7 +117,6 @@
                         android:layout_marginEnd="8dp"
                         android:layout_gravity="center"/>
                     <TextView
-                        android:id="@+id/tv_package_description_1_2"
                         style="@style/textStyleMedium_14"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -135,7 +132,6 @@
                         android:layout_marginEnd="8dp"
                         android:layout_gravity="center"/>
                     <TextView
-                        android:id="@+id/tv_package_description_1_3"
                         style="@style/textStyleMedium_14"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -159,7 +155,6 @@
                 android:gravity="center">
 
                 <TextView
-                    android:id="@+id/tv_package_price_label_1"
                     style="@style/textStyleMedium_14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -168,7 +163,6 @@
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/tv_package_price_1"
                     style="@style/textStyleSemIBold_20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -189,7 +183,6 @@
             android:clipToPadding="false">
 
             <TextView
-                android:id="@+id/tv_package_title_2"
                 style="@style/textStyleSemIBold_20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -200,16 +193,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="8dp">
+                android:layout_marginBottom="8dp"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:layout_width="16dp"
                     android:layout_height="16dp"
-                    android:src="@drawable/icons_clock" />
+                    android:src="@drawable/icons_clock"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     style="@style/textStyleMedium_14"
-                    android:id="@+id/tvPromoDate_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Berlaku 6 Bulan"
@@ -234,7 +228,6 @@
                         android:layout_marginEnd="8dp"
                         android:layout_gravity="center"/>
                     <TextView
-                        android:id="@+id/tv_package_description_2_1"
                         style="@style/textStyleMedium_14"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -250,7 +243,6 @@
                         android:layout_marginEnd="8dp"
                         android:layout_gravity="center"/>
                     <TextView
-                        android:id="@+id/tv_package_description_2_2"
                         style="@style/textStyleMedium_14"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -266,7 +258,6 @@
                         android:layout_marginEnd="8dp"
                         android:layout_gravity="center"/>
                     <TextView
-                        android:id="@+id/tv_package_description_2_3"
                         style="@style/textStyleMedium_14"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -290,7 +281,6 @@
                 android:gravity="center">
 
                 <TextView
-                    android:id="@+id/tv_package_price_label_2"
                     style="@style/textStyleMedium_14_selected"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -299,7 +289,6 @@
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/tv_package_price_2"
                     style="@style/textStyleSemIBold_20_selected"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -320,7 +309,6 @@
             android:clipToPadding="false">
 
             <TextView
-                android:id="@+id/tv_package_title_3"
                 style="@style/textStyleSemIBold_20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -331,16 +319,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="8dp">
+                android:layout_marginBottom="8dp"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:layout_width="16dp"
                     android:layout_height="16dp"
-                    android:src="@drawable/icons_clock" />
+                    android:src="@drawable/icons_clock"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     style="@style/textStyleMedium_14"
-                    android:id="@+id/tvPromoDate_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Berlaku 12 Bulan"
@@ -365,7 +354,6 @@
                         android:layout_marginEnd="8dp"
                         android:layout_gravity="center"/>
                     <TextView
-                        android:id="@+id/tv_package_description_3_1"
                         style="@style/textStyleMedium_14"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -381,7 +369,6 @@
                         android:layout_marginEnd="8dp"
                         android:layout_gravity="center"/>
                     <TextView
-                        android:id="@+id/tv_package_description_3_2"
                         style="@style/textStyleMedium_14"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -397,7 +384,6 @@
                         android:layout_marginEnd="8dp"
                         android:layout_gravity="center"/>
                     <TextView
-                        android:id="@+id/tv_package_description_3_3"
                         style="@style/textStyleMedium_14"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -421,7 +407,6 @@
                 android:gravity="center">
 
                 <TextView
-                    android:id="@+id/tv_package_price_label_3"
                     style="@style/textStyleMedium_14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -430,7 +415,6 @@
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/tv_package_price_3"
                     style="@style/textStyleSemIBold_20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
