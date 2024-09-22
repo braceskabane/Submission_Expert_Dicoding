@@ -1,5 +1,6 @@
 package com.dicoding.core.ui.adapter.favorite
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +17,7 @@ class FavoriteStoryAdapter : RecyclerView.Adapter<FavoriteStoryAdapter.ViewHolde
     private val storyList = mutableListOf<StoryDomainTester>()
     private lateinit var onItemClickCallback: OnItemClickCallback
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setStories(stories: List<StoryDomainTester>) {
         storyList.clear()
         storyList.addAll(stories)

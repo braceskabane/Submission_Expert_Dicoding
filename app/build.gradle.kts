@@ -26,7 +26,14 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+        debug {
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -97,6 +104,11 @@ dependencies {
 
     // LeakCanary
     implementation(libs.leakcanary)
+
+    // Encryption
+    implementation (libs.security.crypto)
+    implementation (libs.secure.preferences.lib)
+    implementation(libs.sqlcipher)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

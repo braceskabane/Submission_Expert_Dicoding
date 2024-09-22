@@ -8,6 +8,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.CertificatePinner
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -23,12 +24,19 @@ class NetworkModule {
         authInterceptor: AuthInterceptor,
         authAuthenticator: AuthAuthenticator
     ): OkHttpClient {
+        // Load the certificate from raw resources
+        val hostname = "story-api.dicoding.dev" // Replace with your server's hostname
+        val certificatePinner = CertificatePinner.Builder()
+            .add(hostname, "sha256/mlXVySxea2wQqqD+w2Y6MInMv7NUsyiJ+A21qfCkEwU=")
+            .build()
+
         return OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
             .addInterceptor(authInterceptor)
             .authenticator(authAuthenticator)
             .connectTimeout(120, TimeUnit.SECONDS)
             .readTimeout(120, TimeUnit.SECONDS)
+            .certificatePinner(certificatePinner)
             .build()
     }
 

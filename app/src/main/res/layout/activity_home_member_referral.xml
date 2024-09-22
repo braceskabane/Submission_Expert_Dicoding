@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.dashboard.home.member.mreferral.HomeMemberReferralActivity"
-    android:background="@color/white">
+    android:background="@color/white"
+    tools:ignore="Overdraw">
 
     <!-- Close Button -->
     <ImageView

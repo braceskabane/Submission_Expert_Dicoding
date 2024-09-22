@@ -1,6 +1,10 @@
 package com.dicoding.core.di
 
 import android.content.Context
+import android.content.SharedPreferences
+import android.security.keystore.KeyGenParameterSpec
+import android.security.keystore.KeyProperties
+import android.util.Log
 import androidx.datastore.core.DataStore
 import androidx.datastore.core.handlers.ReplaceFileCorruptionHandler
 import androidx.datastore.preferences.SharedPreferencesMigration
@@ -9,9 +13,12 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.preferencesDataStoreFile
 import androidx.room.Room
+import androidx.security.crypto.EncryptedSharedPreferences
+import androidx.security.crypto.MasterKey
 import com.dicoding.core.data.source.local.datastore.DatastoreManager
 import com.dicoding.core.data.source.local.room.StoryDao
 import com.dicoding.membership.core.data.source.local.room.StoryDatabase
+import com.securepreferences.SecurePreferences
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,13 +29,40 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import javax.inject.Singleton
 
-@Module()
+@Module
 @InstallIn(SingletonComponent::class)
 class DatabaseModule {
 
     @Singleton
     @Provides
-    fun provideSharedPreferences(@ApplicationContext context: Context): DataStore<Preferences> {
+    fun provideSharedPreferences(@ApplicationContext context: Context): SharedPreferences {
+
+        val spec = KeyGenParameterSpec.Builder(
+            MasterKey.DEFAULT_MASTER_KEY_ALIAS,
+            KeyProperties.PURPOSE_ENCRYPT or KeyProperties.PURPOSE_DECRYPT
+        )
+            .setBlockModes(KeyProperties.BLOCK_MODE_GCM)
+            .setKeySize(MasterKey.DEFAULT_AES_GCM_MASTER_KEY_SIZE)
+            .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_NONE)
+            .build()
+        val masterKey = MasterKey.Builder(context)
+            .setKeyGenParameterSpec(spec)
+            .build()
+
+        return EncryptedSharedPreferences
+            .create(
+                context,
+                "Session",
+                masterKey,
+                EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+                EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+
+        )
+    }
+
+    @Singleton
+    @Provides
+    fun provideDataStore(@ApplicationContext context: Context): DataStore<Preferences> {
         return PreferenceDataStoreFactory.create(
             corruptionHandler = ReplaceFileCorruptionHandler(
                 produceNewData = { emptyPreferences() }

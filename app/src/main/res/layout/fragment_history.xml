@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dicoding.story.favorite.home.HomeFragment"
-    android:background="@color/light_grey_100">
+    android:background="@color/light_grey_100"
+    tools:ignore="Overdraw">
 
     <ImageView
         android:id="@+id/Scroll"
