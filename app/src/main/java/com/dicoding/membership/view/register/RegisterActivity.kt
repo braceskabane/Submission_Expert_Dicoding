@@ -13,8 +13,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.core.data.source.Resource
 import com.dicoding.membership.R
-import com.dicoding.membership.core.utils.isInternetAvailable
-import com.dicoding.membership.core.utils.showToast
+import com.dicoding.core.utils.isInternetAvailable
+import com.dicoding.core.utils.showToast
 import com.dicoding.membership.databinding.ActivityRegisterBinding
 import com.dicoding.membership.view.login.LoginActivity
 import dagger.hilt.android.AndroidEntryPoint

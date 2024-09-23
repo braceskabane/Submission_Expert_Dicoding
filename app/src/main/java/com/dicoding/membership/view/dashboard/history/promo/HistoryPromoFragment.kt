@@ -1,6 +1,5 @@
 package com.dicoding.membership.view.dashboard.history.promo
 
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -12,8 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.core.ui.adapter.story.StoryPagingAdapter
-import com.dicoding.dynamicfeature.view.dashboard.history.promo.HistoryPromoViewModel
-import com.dicoding.membership.core.domain.story.tester.model.StoryDomainTester
+import com.dicoding.core.domain.story.tester.model.StoryDomainTester
 import com.dicoding.membership.databinding.FragmentHistoryPromoBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -31,7 +29,7 @@ class HistoryPromoFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentHistoryPromoBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -57,7 +55,7 @@ class HistoryPromoFragment : Fragment() {
         }
 
         storyPagingAdapter.setOnItemClickCallback(object : StoryPagingAdapter.OnItemClickCallback {
-            override fun onItemClicked(context: Context, story: StoryDomainTester) {
+            override fun onItemClicked(story: StoryDomainTester) {
 //                val intent = Intent(context, DetailStoryActivity::class.java)
 //                intent.putExtra(DetailStoryActivity.EXTRA_STORY_ID, story.id)
 //                startActivity(intent)

@@ -1,8 +1,8 @@
 package com.dicoding.core.domain.auth.tester.usecase
 
 import com.dicoding.core.data.source.Resource
-import com.dicoding.membership.core.domain.auth.tester.model.LoginResponseDomain
-import com.dicoding.membership.core.domain.auth.tester.model.RegisterResponseDomain
+import com.dicoding.core.domain.auth.tester.model.LoginResponseDomain
+import com.dicoding.core.domain.auth.tester.model.RegisterResponseDomain
 import kotlinx.coroutines.flow.Flow
 
 interface AuthUseCaseTester {

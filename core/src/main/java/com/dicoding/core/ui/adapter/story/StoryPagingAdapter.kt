@@ -1,7 +1,5 @@
 package com.dicoding.core.ui.adapter.story
 
-import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,13 +9,12 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.core.R
-import com.dicoding.membership.core.domain.story.tester.model.StoryDomainTester
-import com.dicoding.membership.core.ui.adapter.story.callback.StoryPagingDiffCallback
+import com.dicoding.core.domain.story.tester.model.StoryDomainTester
+import com.dicoding.core.ui.adapter.story.callback.StoryPagingDiffCallback
 
 class StoryPagingAdapter :
     PagingDataAdapter<StoryDomainTester, StoryPagingAdapter.ViewHolder>(StoryPagingDiffCallback()) {
 
-    // Change onItemClickCallback to be nullable
     private var onItemClickCallback: OnItemClickCallback? = null
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -37,7 +34,7 @@ class StoryPagingAdapter :
 
             itemView.setOnClickListener {
                 // Use the callback only if it is not null
-                onItemClickCallback?.onItemClicked(itemView.context, story)
+                onItemClickCallback?.onItemClicked(story)
             }
         }
     }
@@ -55,13 +52,12 @@ class StoryPagingAdapter :
         }
     }
 
-    // Allow setting the callback to null
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback?) {
         this.onItemClickCallback = onItemClickCallback
     }
 
     interface OnItemClickCallback {
-        fun onItemClicked(context: Context, story: StoryDomainTester)
+        fun onItemClicked(story: StoryDomainTester)
     }
 }
 

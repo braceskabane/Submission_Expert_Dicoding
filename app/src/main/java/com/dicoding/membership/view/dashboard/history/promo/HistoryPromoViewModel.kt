@@ -1,11 +1,11 @@
-package com.dicoding.dynamicfeature.view.dashboard.history.promo
+package com.dicoding.membership.view.dashboard.history.promo
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.dicoding.core.domain.story.tester.usecase.StoryUseCaseTester
-import com.dicoding.membership.core.domain.story.tester.model.StoryDomainTester
+import com.dicoding.core.domain.story.tester.model.StoryDomainTester
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

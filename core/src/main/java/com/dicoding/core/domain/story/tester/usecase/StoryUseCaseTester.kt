@@ -2,7 +2,7 @@ package com.dicoding.core.domain.story.tester.usecase
 
 import androidx.paging.PagingData
 import com.dicoding.core.data.source.Resource
-import com.dicoding.membership.core.domain.story.tester.model.StoryDomainTester
+import com.dicoding.core.domain.story.tester.model.StoryDomainTester
 import kotlinx.coroutines.flow.Flow
 
 interface StoryUseCaseTester {

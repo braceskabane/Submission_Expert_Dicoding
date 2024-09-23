@@ -1,10 +1,10 @@
-package com.dicoding.membership.core.utils.datamapper
+package com.dicoding.core.utils.datamapper
 
 import com.dicoding.core.data.source.remote.response.test.LoginTest
 import com.dicoding.core.data.source.remote.response.test.RegisterTest
-import com.dicoding.membership.core.domain.auth.tester.model.LoginDomain
-import com.dicoding.membership.core.domain.auth.tester.model.LoginResponseDomain
-import com.dicoding.membership.core.domain.auth.tester.model.RegisterResponseDomain
+import com.dicoding.core.domain.auth.tester.model.LoginDomain
+import com.dicoding.core.domain.auth.tester.model.LoginResponseDomain
+import com.dicoding.core.domain.auth.tester.model.RegisterResponseDomain
 
 
 object AuthDataMapper {

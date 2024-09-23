@@ -16,7 +16,7 @@ import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
 import com.dicoding.core.data.source.local.datastore.DatastoreManager
 import com.dicoding.core.data.source.local.room.StoryDao
-import com.dicoding.membership.core.data.source.local.room.StoryDatabase
+import com.dicoding.core.data.source.local.room.StoryDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

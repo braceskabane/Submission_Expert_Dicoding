@@ -16,8 +16,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.dicoding.membership.R
-import com.dicoding.membership.core.utils.showLongToast
-import com.dicoding.membership.core.utils.showToast
+import com.dicoding.core.utils.showLongToast
+import com.dicoding.core.utils.showToast
 import com.dicoding.membership.databinding.ActivityMainBinding
 import com.dicoding.membership.view.popup.token.TokenExpiredDialog
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -54,6 +54,8 @@ class MainActivity : AppCompatActivity() {
 
         checkNotificationPermission()
 
+        setupActionBar()
+
         tvPowerStatus = findViewById(R.id.tv_power_status)
     }
 
@@ -84,11 +86,6 @@ class MainActivity : AppCompatActivity() {
         registerBroadCastReceiver()
     }
 
-    override fun onStop() {
-        super.onStop()
-        unregisterReceiver(broadcastReceiver)
-    }
-
     private fun validateLoginStatus() {
         mainViewModel.getLoginStatus().observe(this) { isLoggedIn ->
             if (!isLoggedIn) {
@@ -116,7 +113,7 @@ class MainActivity : AppCompatActivity() {
         navView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.homeFragment -> {
-                    checkAndNavigateToFeature("favorite", R.id.homeFragment, navViewController)
+                    checkAndNavigateToFeature(R.id.homeFragment, navViewController)
                 }
                 R.id.promoFragment -> {
                     navViewController.navigate(R.id.promoFragment)
@@ -132,7 +129,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun checkAndNavigateToFeature(moduleName: String, destinationId: Int, navController: NavController) {
+    private fun checkAndNavigateToFeature(destinationId: Int, navController: NavController) {
+        val moduleName = "favorite"
+
         if (splitInstallManager.installedModules.contains(moduleName)) {
             navController.navigate(destinationId)
         } else {
@@ -144,11 +143,12 @@ class MainActivity : AppCompatActivity() {
                 .addOnSuccessListener {
                     navController.navigate(destinationId)
                 }
-                .addOnFailureListener { exception ->
+                .addOnFailureListener {
                     showLongToast("Error installing module: $moduleName")
                 }
         }
     }
+
 
     private fun setupActionBar() {
         supportActionBar?.hide()

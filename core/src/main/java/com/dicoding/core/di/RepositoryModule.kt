@@ -2,8 +2,8 @@ package com.dicoding.core.di
 
 import com.dicoding.core.data.repository.AuthRepositoryTester
 import com.dicoding.core.data.repository.StoryRepositoryTester
-import com.dicoding.membership.core.domain.auth.tester.repository.IAuthRepositoryTester
-import com.dicoding.membership.core.domain.story.tester.repository.IStoryRepositoryTester
+import com.dicoding.core.domain.auth.tester.repository.IAuthRepositoryTester
+import com.dicoding.core.domain.story.tester.repository.IStoryRepositoryTester
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -19,6 +19,4 @@ abstract class RepositoryModule {
 
     @Binds
     abstract fun provideStoryRepository(storyRepository: StoryRepositoryTester): IStoryRepositoryTester
-
-    // Dynamic Feature Dagger Multi Module
 }

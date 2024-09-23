@@ -1,8 +1,8 @@
-package com.dicoding.membership.core.ui.adapter.story.callback
+package com.dicoding.core.ui.adapter.story.callback
 
 import android.util.Log
 import androidx.recyclerview.widget.DiffUtil
-import com.dicoding.membership.core.domain.story.tester.model.StoryDomainTester
+import com.dicoding.core.domain.story.tester.model.StoryDomainTester
 
 class StoryPagingDiffCallback : DiffUtil.ItemCallback<StoryDomainTester>() {
     override fun areItemsTheSame(oldItem: StoryDomainTester, newItem: StoryDomainTester): Boolean {

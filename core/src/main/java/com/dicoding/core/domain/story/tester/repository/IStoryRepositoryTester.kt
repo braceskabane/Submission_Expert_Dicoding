@@ -1,8 +1,8 @@
-package com.dicoding.membership.core.domain.story.tester.repository
+package com.dicoding.core.domain.story.tester.repository
 
 import androidx.paging.PagingData
 import com.dicoding.core.data.source.Resource
-import com.dicoding.membership.core.domain.story.tester.model.StoryDomainTester
+import com.dicoding.core.domain.story.tester.model.StoryDomainTester
 import kotlinx.coroutines.flow.Flow
 
 interface IStoryRepositoryTester {

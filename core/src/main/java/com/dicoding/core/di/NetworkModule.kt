@@ -2,8 +2,8 @@ package com.dicoding.core.di
 
 import com.dicoding.core.BuildConfig
 import com.dicoding.core.data.source.remote.network.ApiService
-import com.dicoding.membership.core.di.interceptor.AuthAuthenticator
-import com.dicoding.membership.core.di.interceptor.AuthInterceptor
+import com.dicoding.core.di.interceptor.AuthAuthenticator
+import com.dicoding.core.di.interceptor.AuthInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

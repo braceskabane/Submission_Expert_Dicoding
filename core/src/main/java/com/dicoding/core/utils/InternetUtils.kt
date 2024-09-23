@@ -1,9 +1,8 @@
-package com.dicoding.membership.core.utils
+package com.dicoding.core.utils
 
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
-import android.os.Build
 
 fun isInternetAvailable(context: Context): Boolean {
     val connectivityManager =

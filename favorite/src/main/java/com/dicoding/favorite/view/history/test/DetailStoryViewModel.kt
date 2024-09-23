@@ -7,15 +7,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dicoding.core.data.source.Resource
 import com.dicoding.core.domain.story.tester.usecase.StoryUseCaseTester
-import com.dicoding.membership.core.domain.story.tester.model.StoryDomainTester
+import com.dicoding.core.domain.story.tester.model.StoryDomainTester
 import kotlinx.coroutines.launch
 
 class DetailStoryViewModel(
     private val storyUseCase: StoryUseCaseTester
 ) : ViewModel() {
 
-    val story: LiveData<Resource<StoryDomainTester>> = MutableLiveData<Resource<StoryDomainTester>>()
-    val isFavorite: LiveData<Boolean> = MutableLiveData<Boolean>()
+    val story: LiveData<Resource<StoryDomainTester>> = MutableLiveData()
+    val isFavorite: LiveData<Boolean> = MutableLiveData()
 
     init {
         Log.d("DetailStoryViewModel", "DetailStoryViewModel initialized")

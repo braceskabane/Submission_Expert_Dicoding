@@ -1,6 +1,5 @@
 package com.dicoding.favorite.view.home
 
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -13,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.core.ui.adapter.favorite.FavoriteStoryAdapter
 import com.dicoding.favorite.view.utils.DaggerHomeComponent
 import com.dicoding.favorite.view.utils.ViewModelFactory
-import com.dicoding.membership.core.domain.story.tester.model.StoryDomainTester
+import com.dicoding.core.domain.story.tester.model.StoryDomainTester
 import com.dicoding.membership.di.ListFavoriteModuleDependencies
 import com.dicoding.story.favorite.databinding.FragmentHomeBinding
 import dagger.hilt.android.EntryPointAccessors
@@ -72,7 +71,7 @@ class HomeFragment : Fragment() {
         }
 
         favoriteStoryAdapter.setOnItemClickCallback(object : FavoriteStoryAdapter.OnItemClickCallback {
-            override fun onItemClicked(context: Context, story: StoryDomainTester) {
+            override fun onItemClicked(story: StoryDomainTester) {
 //                val intent = Intent(context, DetailStoryActivity::class.java)
 //                intent.putExtra(DetailStoryActivity.EXTRA_STORY_ID, story.id)
 //                startActivity(intent)

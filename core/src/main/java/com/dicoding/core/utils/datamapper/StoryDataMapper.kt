@@ -1,9 +1,9 @@
-package com.dicoding.membership.core.utils.datamapper
+package com.dicoding.core.utils.datamapper
 
 import com.dicoding.core.data.source.local.entity.FavoriteStoryEntity
 import com.dicoding.core.data.source.remote.response.test.ListStoryItem
 import com.dicoding.core.data.source.remote.response.test.Story
-import com.dicoding.membership.core.domain.story.tester.model.StoryDomainTester
+import com.dicoding.core.domain.story.tester.model.StoryDomainTester
 
 object StoryDataMapper {
     fun mapListStoryToDomain(listStory: List<ListStoryItem>): List<StoryDomainTester> {
@@ -20,17 +20,17 @@ object StoryDataMapper {
         }
     }
 
-    fun mapResponseToDomain(response: ListStoryItem): StoryDomainTester {
-        return StoryDomainTester(
-            id = response.id,
-            name = response.name,
-            description = response.description,
-            photoUrl = response.photoUrl,
-            createdAt = response.createdAt,
-            lat = response.lat,
-            lon = response.lon
-        )
-    }
+//    fun mapResponseToDomain(response: ListStoryItem): StoryDomainTester {
+//        return StoryDomainTester(
+//            id = response.id,
+//            name = response.name,
+//            description = response.description,
+//            photoUrl = response.photoUrl,
+//            createdAt = response.createdAt,
+//            lat = response.lat,
+//            lon = response.lon
+//        )
+//    }
 
     fun mapDetailStoryToDomain(story: Story): StoryDomainTester {
         return StoryDomainTester(

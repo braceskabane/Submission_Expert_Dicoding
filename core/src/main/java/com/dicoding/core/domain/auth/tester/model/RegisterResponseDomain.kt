@@ -1,4 +1,4 @@
-package com.dicoding.membership.core.domain.auth.tester.model
+package com.dicoding.core.domain.auth.tester.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

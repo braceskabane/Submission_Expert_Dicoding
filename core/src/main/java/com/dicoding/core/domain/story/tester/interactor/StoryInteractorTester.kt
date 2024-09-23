@@ -1,9 +1,9 @@
-package com.dicoding.membership.core.domain.story.tester.interactor
+package com.dicoding.core.domain.story.tester.interactor
 
 import androidx.paging.PagingData
 import com.dicoding.core.data.repository.StoryRepositoryTester
 import com.dicoding.core.data.source.Resource
-import com.dicoding.membership.core.domain.story.tester.model.StoryDomainTester
+import com.dicoding.core.domain.story.tester.model.StoryDomainTester
 import com.dicoding.core.domain.story.tester.usecase.StoryUseCaseTester
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

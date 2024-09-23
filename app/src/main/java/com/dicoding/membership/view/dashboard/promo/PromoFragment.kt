@@ -1,6 +1,5 @@
 package com.dicoding.membership.view.dashboard.promo
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.core.ui.adapter.story.StoryPagingAdapter
-import com.dicoding.membership.core.domain.story.tester.model.StoryDomainTester
+import com.dicoding.core.domain.story.tester.model.StoryDomainTester
 import com.dicoding.membership.databinding.FragmentPromoBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -54,7 +53,7 @@ class PromoFragment : Fragment() {
         }
 
         storyPagingAdapter.setOnItemClickCallback(object : StoryPagingAdapter.OnItemClickCallback {
-            override fun onItemClicked(context: Context, story: StoryDomainTester) {
+            override fun onItemClicked(story: StoryDomainTester) {
                 // Handle item click
             }
         })

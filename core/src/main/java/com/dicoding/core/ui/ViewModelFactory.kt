@@ -1,4 +1,4 @@
-package com.dicoding.membership.core.ui
+package com.dicoding.core.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

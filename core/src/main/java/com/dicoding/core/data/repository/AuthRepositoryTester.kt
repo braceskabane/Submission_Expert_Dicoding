@@ -7,10 +7,10 @@ import com.dicoding.core.data.source.remote.RemoteDataSource
 import com.dicoding.core.data.source.remote.network.ApiResponse
 import com.dicoding.core.data.source.remote.response.test.LoginTest
 import com.dicoding.core.data.source.remote.response.test.RegisterTest
-import com.dicoding.membership.core.domain.auth.tester.model.LoginResponseDomain
-import com.dicoding.membership.core.domain.auth.tester.model.RegisterResponseDomain
-import com.dicoding.membership.core.domain.auth.tester.repository.IAuthRepositoryTester
-import com.dicoding.membership.core.utils.datamapper.AuthDataMapper
+import com.dicoding.core.domain.auth.tester.model.LoginResponseDomain
+import com.dicoding.core.domain.auth.tester.model.RegisterResponseDomain
+import com.dicoding.core.domain.auth.tester.repository.IAuthRepositoryTester
+import com.dicoding.core.utils.datamapper.AuthDataMapper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn

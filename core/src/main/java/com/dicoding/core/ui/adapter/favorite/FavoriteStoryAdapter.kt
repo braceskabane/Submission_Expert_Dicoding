@@ -1,7 +1,6 @@
 package com.dicoding.core.ui.adapter.favorite
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.core.R
-import com.dicoding.membership.core.domain.story.tester.model.StoryDomainTester
+import com.dicoding.core.domain.story.tester.model.StoryDomainTester
 
 class FavoriteStoryAdapter : RecyclerView.Adapter<FavoriteStoryAdapter.ViewHolder>() {
 
@@ -40,7 +39,7 @@ class FavoriteStoryAdapter : RecyclerView.Adapter<FavoriteStoryAdapter.ViewHolde
             tvItemDescription.text = story.description
 
             itemView.setOnClickListener {
-                onItemClickCallback.onItemClicked(itemView.context, story)
+                onItemClickCallback.onItemClicked(story)
             }
         }
     }
@@ -62,6 +61,6 @@ class FavoriteStoryAdapter : RecyclerView.Adapter<FavoriteStoryAdapter.ViewHolde
     }
 
     interface OnItemClickCallback {
-        fun onItemClicked(context: Context, story: StoryDomainTester)
+        fun onItemClicked(story: StoryDomainTester)
     }
 }

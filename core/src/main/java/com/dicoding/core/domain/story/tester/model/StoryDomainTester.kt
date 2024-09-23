@@ -1,4 +1,4 @@
-package com.dicoding.membership.core.domain.story.tester.model
+package com.dicoding.core.domain.story.tester.model
 
 data class StoryDomainTester(
     val id: String,
